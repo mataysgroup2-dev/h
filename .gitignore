@@ -1,0 +1,4 @@
+node_modules
+.env
+bookings.json
+tours_from_channel.json

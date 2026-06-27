@@ -1,0 +1,20 @@
+{
+  "name": "tur-paketlar-bot",
+  "version": "1.0.0",
+  "description": "Tur paketlarini sotish uchun Telegram bot (pilot versiya, AI-asosida kanal o'qish)",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.2",
+    "dotenv": "^17.4.2",
+    "telegraf": "^4.16.3"
+  }
+}
