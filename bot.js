@@ -5,7 +5,17 @@
 // Talab qilinadi: .env faylida BOT_TOKEN va OPERATOR_GROUP_ID
 // ============================================================
 
-require("dotenv").config();
+// dotenv FAQAT lokal kompyuterda .env fayli mavjud bo'lganda
+// ishlatiladi. Railway/server muhitida bu fayl yo'q (xavfsizlik
+// uchun .gitignore orqali chiqarib tashlangan) - o'rniga Railway
+// o'zining "Variables" panelidan to'g'ridan-to'g'ri process.env'ga
+// joylaydi, shuning uchun bu yerda hech narsa qilish kerak emas.
+const fs = require("fs");
+const path = require("path");
+if (fs.existsSync(path.join(__dirname, ".env"))) {
+  require("dotenv").config();
+}
+
 const { Telegraf, Markup, session } = require("telegraf");
 const { DIRECTIONS } = require("./tours");
 const { getTours } = require("./channelTours");
